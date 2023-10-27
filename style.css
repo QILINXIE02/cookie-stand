@@ -1,0 +1,25 @@
+body {
+  font-family: 'YourCustomGoogleFont', sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-family: 'YourCustomGoogleFont', sans-serif;
+  color: #be2f0f;
+  text-align: center;
+  padding: 20px 0;
+}
+.location-info {
+  background-color: #e29898;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+.location-info h2 {
+  color: #333;
+}
+.location-info p {
+  margin: 10px 0;
+}
