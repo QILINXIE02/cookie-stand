@@ -7,6 +7,24 @@
   <title>Salmon Cookies Sales</title>
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3f3f3;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #ff5733;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+    }
+    .link-container {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,76 +40,64 @@
     <div style="text-align: center;">
       <img src="https://assets.dragoart.com/images/4190_501/how-to-draw-a-salmon_5e4c80e9c9f8a8.85035757_18917_3_4.jpg" alt="Salmon" width="200" height="150">
     </div>
+    
+    <article id="city-container">
+      <!-- Your content here -->
+      <div class="store-images">
+        <div class="image-container">
+          <img src="https://th.bing.com/th/id/R.4c07f7f8ab8c1c1d0d29e7b9d112a9e1?rik=ZRhQ05rN0kWIRg&riu=http%3a%2f%2fmallwalkers.net%2fwp-content%2fuploads%2f2017%2f12%2forigcookieco3-768x489.jpg&ehk=ugrMw0Y10NfWx2e0EHCrA3h0saeQyfqRdYLUX1RRhxs%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Seattle" width="200" height="150">
+          <p>Seattle</p>
+        </div>
+        <div class="image-container">
+          <img src="https://aroimakmak.com/wp-content/uploads/2016/06/Cookietimetokyo_facade.jpg" alt="Tokyo" width="200" height="150">
+          <p>Tokyo</p>
+        </div>
+      </div>
+    </article>
+    
+    <button id="toggle-mode">Toggle Mode</button>
   </main>
 
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f3f3f3;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      color: #ff5733;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 24px; /
-    }
-    .link-container {
-      text-align: center;
-    }
-  </style>
-
-<div class="store-images">
-  <div class="image-container">
-    <img src="https://th.bing.com/th/id/R.4c07f7f8ab8c1c1d0d29e7b9d112a9e1?rik=ZRhQ05rN0kWIRg&riu=http%3a%2f%2fmallwalkers.net%2fwp-content%2fuploads%2f2017%2f12%2forigcookieco3-768x489.jpg&ehk=ugrMw0Y10NfWx2e0EHCrA3h0saeQyfqRdYLUX1RRhxs%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Seattle" width="200" height="150">
-    <p>Seattle</p>
-  </div>
-  <div class="image-container">
-    <img src="https://aroimakmak.com/wp-content/uploads/2016/06/Cookietimetokyo_facade.jpg" alt="Tokyo" width="200" height="150">
-    <p>Tokyo</p>
-  </div>
-</div>
-  <main>
-    <form id="form">
-      <fieldset>
-        <legend><i>New Stand</i></legend>
-        <label for="storeName">Store Name</label>
-        <input type="text" id="storeName" name="storeName">
-        <label for="minCustomers">Minimum Customers</label>
-        <input type="number" id="minCustomers" name="minCustomers">
-        <label for="maxCustomers">Max Customers</label>
-        <input type="number" id="maxCustomers" name="maxCustomers">
-        <label for="averageSale">Average Sale</label>
-        <input type="text" id="averageSale" name="averageSale">
-        <button type="submit">Submit</button>
-      </fieldset>
-    </form>
-
-    <table id="stores">
-      <tr>
-        <th>Location</th>
-        <th>Min Customers</th>
-        <th>Max Customers</th>
-        <th>Avg Cookie / Sale</th>
-        <th>6:00 AM</th>
-        <th>7:00 AM</th>
-        <th>8:00 AM</th>
-        <th>9:00 AM</th>
-        <th>10:00 AM</th>
-        <th>11:00 AM</th>
-        <th>12:00 PM</th>
-        <th>1:00 PM</th>
-        <th>2:00 PM</th>
-        <th>3:00 PM</th>
-        <th>4:00 PM</th>
-        <th>5:00 PM</th>
-        <th>6:00 PM</th>
-        <th>7:00 PM</th>
-        <th>Total</th>
-      </tr>
-    </table>
+  <form id="newStoreForm">
+    <fieldset>
+            <legend>Add a new store to the table!</legend>
+            <label for="locationName">Location Name</label>
+            <input type="text" name ="locationName"/>
+    
+            <label for="newMinCust">Minimum Customers/ Hour</label>
+            <input type="number" name="newMinCust"/>
+    
+            <label for="newMaxCust">Maximum Customers/ Hour</label>
+            <input type="number" name="newMaxCust"/>
+    
+            <label for="newAvgCookie">Average Cookies/ Sale</label>
+            <input type="text" name="newAvgCookie"/>
+    <button type="submit">Submit</button>
+    
+    </fieldset>
+  <table id="stores">
+    <tr>
+      <th>Location</th>
+      <th>Min Customers</th>
+      <th>Max Customers</th>
+      <th>Avg Cookie / Sale</th>
+      <th>6:00 AM</th>
+      <th>7:00 AM</th>
+      <th>8:00 AM</th>
+      <th>9:00 AM</th>
+      <th>10:00 AM</th>
+      <th>11:00 AM</th>
+      <th>12:00 PM</th>
+      <th>1:00 PM</th>
+      <th>2:00 PM</th>
+      <th>3:00 PM</th>
+      <th>4:00 PM</th>
+      <th>5:00 PM</th>
+      <th>6:00 PM</th>
+      <th>7:00 PM</th>
+      <th>Total</th>
+    </tr>
+  </table>
     <script src="app.js"></script>
   </main>
 
@@ -99,16 +105,16 @@
     <section class="locations">
       <p><strong>Locations</strong></p>
       <ul>
-        <li>4788 Hodges Blvd, Seattle, Washington</li>
-        <li>10700 Academy Rd, Tokyo, Japan</li>
-        <li>2700 U.S. 29, Dubai, United Arab Emirates</li>
-        <li>4330 Fulton Ave, Paris, Italy</li>
-        <li>428 22nd St E, Lima, Peru</li>
+        <li>4788 Hodges Blvd, <strong>Seattle, Washington</strong></li>
+        <li>10700 Academy Rd, <strong>Tokyo, Japan</strong></li>
+        <li>2700 U.S. 29, <strong>Dubai, United Arab Emirates</strong></li>
+        <li>4330 Fulton Ave, <strong>Paris, Italy</strong></li>
+        <li>428 22nd St E, <strong>Lima, Peru</strong></li>
       </ul>
       <p><strong>Store hours: Monday-Friday: 6am-8pm</strong></p>
     </section>
     <section class="copyright">
-      <p style="font-weight: bold; font-size: 18px;">© 2023 Pat's Salmon Cookies</p>
+      <p style="font-weight: bold; font-size: 18px;">© 2023 Pat's Salmon Cookies(table submission display below, sorry, will try to fix later)</p>
     </section>
   </footer>
 

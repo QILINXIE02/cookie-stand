@@ -1,4 +1,4 @@
-// Constructor function for a Salmon Cookie Stand
+
 function SalmonCookieStand(location, minCustomers, maxCustomers, avgCookiesPerSale) {
   this.location = location;
   this.minCustomers = minCustomers;
@@ -6,19 +6,19 @@ function SalmonCookieStand(location, minCustomers, maxCustomers, avgCookiesPerSa
   this.avgCookiesPerSale = avgCookiesPerSale;
   this.cookiesSoldPerHour = [];
   this.dailyLocationTotal = 0;
-  this.totalCustomers = 0; // Total customers for the location
+  this.totalCustomers = 0;
 }
 
-// Prototype method for generating hourly sales
+// Prototype method: generating hourly sales
 SalmonCookieStand.prototype.generateHourlySales = function () {
   for (let hour = 6; hour <= 19; hour++) {
     const randomCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers);
     const cookiesSold = Math.round(randomCustomers * this.avgCookiesPerSale);
     this.cookiesSoldPerHour.push(cookiesSold);
     this.dailyLocationTotal += cookiesSold;
-    this.totalCustomers += randomCustomers; // Accumulate total customers
+    this.totalCustomers += randomCustomers; // total customers
   }
-};
+}
 
 // Array of Salmon Cookie Stands
 const locations = [
@@ -29,24 +29,29 @@ const locations = [
   new SalmonCookieStand('Lima', 2, 16, 4.6),
 ];
 
-// Function to generate hourly sales data for all locations
+//add a new SalmonCookieStand to the locations array
+function addNewStore(locationName, newMinCust, newMaxCust, newAvgCookie) {
+  const newStore = new SalmonCookieStand(locationName, newMinCust, newMaxCust, newAvgCookie);
+  locations.push(newStore);
+}
+
+// generate hourly sales, all locations
 function generateHourlySalesData() {
   for (const location of locations) {
     location.generateHourlySales();
   }
 }
 
-// Function to display sales data for all locations
+//display sales data for all locations
 function displaySalesData() {
   const table = document.createElement('table');
   table.classList.add('sales-table');
 
-  // Create the header row
+  //header row
   const headerRow = document.createElement('tr');
   headerRow.innerHTML = '<th>Location</th><th>6:00am</th><th>7:00am</th><th>8:00am</th><th>9:00am</th><th>10:00am</th><th>11:00am</th><th>12:00pm</th><th>1:00pm</th><th>2:00pm</th><th>3:00pm</th><th>4:00pm</th><th>5:00pm</th><th>6:00pm</th><th>7:00pm</th><th>Daily Location Total</th><th>Total Customers</th>';
   table.appendChild(headerRow);
 
-  // Create rows for each location
   for (const location of locations) {
     const row = document.createElement('tr');
     let rowHTML = `<td>${location.location}</td>`;
@@ -56,15 +61,34 @@ function displaySalesData() {
     }
 
     rowHTML += `<td>${location.dailyLocationTotal}</td>`;
-    rowHTML += `<td>${location.totalCustomers}</td>`; // Display total customers
+    rowHTML += `<td>${location.totalCustomers}</td>`; // total customers
     row.innerHTML = rowHTML;
     table.appendChild(row);
   }
 
-  // Append the table to the document body
+  const oldTable = document.querySelector('.sales-table');
+  if (oldTable) {
+    oldTable.remove();
+  }
   document.body.appendChild(table);
 }
 
-// Call the functions to generate and display sales data
-generateHourlySalesData();
-displaySalesData();
+// Form
+const locationForm = document.getElementById('newStoreForm');
+
+locationForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const locationName = event.target.locationName.value;
+  const newMinCust = parseInt(event.target.newMinCust.value);
+  const newMaxCust = parseInt(event.target.newMaxCust.value);
+  const newAvgCookie = parseFloat(event.target.newAvgCookie.value);
+
+  if (locationName && !isNaN(newMinCust) && !isNaN(newMaxCust) && !isNaN(newAvgCookie)) {
+    addNewStore(locationName, newMinCust, newMaxCust, newAvgCookie);
+    locationForm.reset();
+    generateHourlySalesData();
+    displaySalesData();
+  } else {
+    alert('Please enter valid input values.');
+  }
+});
