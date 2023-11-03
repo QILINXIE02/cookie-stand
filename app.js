@@ -6,6 +6,7 @@ function SalmonCookieStand(location, minCustomers, maxCustomers, avgCookiesPerSa
   this.avgCookiesPerSale = avgCookiesPerSale;
   this.cookiesSoldPerHour = [];
   this.dailyLocationTotal = 0;
+  this.totalCustomers = 0; // Total customers for the location
 }
 
 // Prototype method for generating hourly sales
@@ -15,6 +16,7 @@ SalmonCookieStand.prototype.generateHourlySales = function () {
     const cookiesSold = Math.round(randomCustomers * this.avgCookiesPerSale);
     this.cookiesSoldPerHour.push(cookiesSold);
     this.dailyLocationTotal += cookiesSold;
+    this.totalCustomers += randomCustomers; // Accumulate total customers
   }
 };
 
@@ -41,7 +43,7 @@ function displaySalesData() {
 
   // Create the header row
   const headerRow = document.createElement('tr');
-  headerRow.innerHTML = '<th>Location</th><th>6:00am</th><th>7:00am</th><th>8:00am</th><th>9:00am</th><th>10:00am</th><th>11:00am</th><th>12:00pm</th><th>1:00pm</th><th>2:00pm</th><th>3:00pm</th><th>4:00pm</th><th>5:00pm</th><th>6:00pm</th><th>7:00pm</th><th>Daily Location Total</th>';
+  headerRow.innerHTML = '<th>Location</th><th>6:00am</th><th>7:00am</th><th>8:00am</th><th>9:00am</th><th>10:00am</th><th>11:00am</th><th>12:00pm</th><th>1:00pm</th><th>2:00pm</th><th>3:00pm</th><th>4:00pm</th><th>5:00pm</th><th>6:00pm</th><th>7:00pm</th><th>Daily Location Total</th><th>Total Customers</th>';
   table.appendChild(headerRow);
 
   // Create rows for each location
@@ -54,6 +56,7 @@ function displaySalesData() {
     }
 
     rowHTML += `<td>${location.dailyLocationTotal}</td>`;
+    rowHTML += `<td>${location.totalCustomers}</td>`; // Display total customers
     row.innerHTML = rowHTML;
     table.appendChild(row);
   }
