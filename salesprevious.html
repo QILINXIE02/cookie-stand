@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sales Data</title>
-  <h1>Sales Data</h1>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salmon Cookies Sales</title>
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/reset.css">
+</head>
+<body>
+  <header>
+    <h1 style="font-size: 45px;">Sales Data</h1>
+  </header>
+
   <main>
     <section class="link-container">
       <a href="index.html" alt="Homepage Link">Home</a>
-      <a href="sales.html" alt="Sale's Data">Sale's Data</a>
+      <a href="sales.html" alt="Sales Data">Sales Data</a>
     </section>
+
+    <div style="text-align: center;">
+      <img src="https://assets.dragoart.com/images/4190_501/how-to-draw-a-salmon_5e4c80e9c9f8a8.85035757_18917_3_4.jpg" alt="Salmon" width="200" height="150">
+    </div>
   </main>
-  
-  <div style="text-align: center;">
-    <img src="https://assets.dragoart.com/images/4190_501/how-to-draw-a-salmon_5e4c80e9c9f8a8.85035757_18917_3_4.jpg" alt="Salmon" width="200" height="150">
-  </div>
+
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -25,139 +34,114 @@
       padding: 0;
     }
     h1 {
-      font-family: 'Arial', sans-serif;
       color: #ff5733;
       text-align: center;
       padding: 20px 0;
+      font-size: 24px; /* Increase font size as needed */
     }
-    .location-sales {
-      background-color: #e0e0e0;
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-    }
-    .location-sales h2 {
-      color: #333;
-    }
-    .location-sales ul {
-      list-style: none;
-      padding: 0;
-    }
-    .location-sales li {
-      margin: 10px 0;
+    .link-container {
+      text-align: center;
     }
   </style>
-</head>
-<body>
-  <div class="location-sales">
-    <h2>Seattle</h2>
-    <ul>
-      <li>6am: 16 cookies</li>
-      <li>7am: 20 cookies</li>
-      <li>8am: 35 cookies</li>
-      <li>9am: 48 cookies</li>
-      <li>10am: 56 cookies</li>
-      <li>11am: 77 cookies</li>
-      <li>12pm: 93 cookies</li>
-      <li>1pm: 144 cookies</li>
-      <li>2pm: 119 cookies</li>
-      <li>3pm: 84 cookies</li>
-      <li>4pm: 61 cookies</li>
-      <li>5pm: 23 cookies</li>
-      <li>6pm: 42 cookies</li>
-      <li>7pm: 57 cookies</li>
-      <li>Total: 875 cookies</li>
-    </ul>
-  </div>
 
-  <div class="location-sales">
-    <h2>Tokyo</h2>
-    <ul>
-      <li>6am: 10 cookies</li>
-      <li>7am: 15 cookies</li>
-      <li>8am: 30 cookies</li>
-      <li>9am: 40 cookies</li>
-      <li>10am: 50 cookies</li>
-      <li>11am: 65 cookies</li>
-      <li>12pm: 75 cookies</li>
-      <li>1pm: 110 cookies</li>
-      <li>2pm: 95 cookies</li>
-      <li>3pm: 80 cookies</li>
-      <li>4pm: 45 cookies</li>
-      <li>5pm: 18 cookies</li>
-      <li>6pm: 35 cookies</li>
-      <li>7pm: 48 cookies</li>
-      <li>Total: 706 cookies</li>
-    </ul>
-  </div>
+  <main>
+    <body>
+      <form id="form">
+        <fieldset>
+          <legend><i>New Stand</i></legend>
+          <label for="storeName">Store Name</label>
+          <input type="text" id="storeName" name="storeName">
+          <label for="minCustomers">Minimum Customers</label>
+          <input type="number" id="minCustomers" name="minCustomers">
+          <label for="maxCustomers">Max Customers</label>
+          <input type="number" id="maxCustomers" name="maxCustomers">
+          <label for="averageSale">Average Sale</label>
+          <input type="text" id="averageSale" name="averageSale">
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
 
-  <div class="location-sales">
-    <h2>Dubai</h2>
-    <ul>
-      <li>6am: 20 cookies</li>
-      <li>7am: 25 cookies</li>
-      <li>8am: 40 cookies</li>
-      <li>9am: 55 cookies</li>
-      <li>10am: 65 cookies</li>
-      <li>11am: 80 cookies</li>
-      <li>12pm: 90 cookies</li>
-      <li>1pm: 130 cookies</li>
-      <li>2pm: 110 cookies</li>
-      <li>3pm: 95 cookies</li>
-      <li>4pm: 50 cookies</li>
-      <li>5pm: 22 cookies</li>
-      <li>6pm: 40 cookies</li>
-      <li>7pm: 50 cookies</li>
-      <li>Total: 765 cookies</li>
-    </ul>
-  </div>
-
-  <div class="location-sales">
-    <h2>Paris</h2>
-    <ul>
-      <li>6am: 14 cookies</li>
-      <li>7am: 18 cookies</li>
-      <li>8am: 30 cookies</li>
-      <li>9am: 42 cookies</li>
-      <li>10am: 49 cookies</li>
-      <li>11am: 68 cookies</li>
-      <li>12pm: 82 cookies</li>
-      <li>1pm: 120 cookies</li>
-      <li>2pm: 105 cookies</li>
-      <li>3pm: 88 cookies</li>
-      <li>4pm: 55 cookies</li>
-      <li>5pm: 25 cookies</li>
-      <li>6pm: 46 cookies</li>
-      <li>7pm: 62 cookies</li>
-      <li>Total: 725 cookies</li>
-    </ul>
-  </div>
-
-  <div class="location-sales">
-    <h2>Lima</h2>
-    <ul>
-      <li>6am: 12 cookies</li>
-      <li>7am: 17 cookies</li>
-      <li>8am: 26 cookies</li>
-      <li>9am: 38 cookies</li>
-      <li>10am: 45 cookies</li>
-      <li>11am: 60 cookies</li>
-      <li>12pm: 72 cookies</li>
-      <li>1pm: 110 cookies</li>
-      <li>2pm: 95 cookies</li>
-      <li>3pm: 80 cookies</li>
-      <li>4pm: 48 cookies</li>
-      <li>5pm: 20 cookies</li>
-      <li>6pm: 40 cookies</li>
-      <li>7pm: 55 cookies</li>
-      <li>Total: 655 cookies</li>
-    </ul>
-  </div>
+      <table id="stores">
+        <tr>
+          <th>Location</th>
+          <th>Min Customers</th>
+          <th>Max Customers</th>
+          <th>Avg Cookie / Sale</th>
+          <th>6:00 AM</th>
+          <th>7:00 AM</th>
+          <th>8:00 AM</th>
+          <th>9:00 AM</th>
+          <th>10:00 AM</th>
+          <th>11:00 AM</th>
+          <th>12:00 PM</th>
+          <th>1:00 PM</th>
+          <th>2:00 PM</th>
+          <th>3:00 PM</th>
+          <th>4:00 PM</th>
+          <th>5:00 PM</th>
+          <th>6:00 PM</th>
+          <th>7:00 PM</th>
+          <th>Total</th>
+        </tr>
+      </table>
   <footer>
+    <section class="locations">
+      <p><strong>Locations</strong></p>
+      <ul>
+        <li>4788 Hodges Blvd, Seattle, Washington</li>
+        <li>10700 Academy Rd, Tokyo, Japan</li>
+        <li>2700 U.S. 29, Dubai, United Arab Emirates</li>
+        <li>4330 Fulton Ave, Paris, Italy</li>
+        <li>428 22nd St E, Lima, Peru</li>
+      </ul>
+      <p><strong>Store hours: Monday-Friday: 6am-8pms</strong></p>
+    </section>
     <section class="copyright">
       <p style="font-weight: bold; font-size: 18px;">© 2023 Pat's Salmon Cookies</p>
     </section>
-  </footer>  
+  </footer>
+Sale's Data
+  
+  [ Navigation ]
+  Home | Sales Data
+  
+  [ Image ]
+     [ Salmon Image ]
+  
+  [ Location Info Section ]
+  [ Seattle ]
+  Hours: 6:00 AM - 8:00 PM
+  Contact: seattle@salmoncookies.com
+  Address: 2467 Union St, Seattle, WA 98122
+  Enjoy delicious salmon-shaped cookies loved by the locals!
+  
+  [ Tokyo ]
+  Hours: 6:00 AM - 8:00 PM
+  Contact: tokyo@salmoncookies.com
+  Address: 150Shibuya1 Jingu, 1F Naole Haraku Blg.
+  Discover the taste of Japan with our salmon cookies!
+  
+  [ Dubai ]
+  Hours: 6:00 AM - 8:00 PM
+  Contact: dubai@salmoncookies.com
+  Address: Sheikh Za, Mall of the Emirates, Parsha, Dubai
+  Experience the Middle Eastern delight with our salmon cookies!
+  
+  [ Paris ]
+  Hours: 6:00 AM - 8:00 PM
+  Contact: paris@salmoncookies.com
+  Address: Rue Greneta 71, 75002 Paris
+  Savor the French-inspired salmon cookies at our Paris location!
+  
+  [ Lima ]
+  Hours: 6:00 AM - 8:00 PM
+  Contact: lima@salmoncookies.com
+  Address: Calle 8 de Octubre 321, Lima 15074
+  Enjoy the taste of Peru with our salmon-shaped cookies in Lima!
+  
+
+  ---------------------------
+  © 2023 Pat's Salmon Cookies
+  <script src="app.js"></script>
 </body>
 </html>
-
