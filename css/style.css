@@ -1,12 +1,22 @@
+
+header{
+  background-color: black;
+  color: salmon;
+  font-family:  'Righteous', sans-serif; ;
+  height: 100px;
+  text-align: center;
+  font-style: italic;
+}
+
 body {
-  font-family: 'YourCustomGoogleFont', sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: #f3f3f3;
   color: #333;
   margin: 0;
   padding: 0;
 }
 h1 {
-  font-family: 'YourCustomGoogleFont', sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #be2f0f;
   text-align: center;
   padding: 20px 0;
@@ -30,4 +40,12 @@ h1 {
   font-size: 24px;
 }
 
-
+.copyright {
+  font-weight: bold;
+  background-color: rgb(167, 167, 167);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  height: auto;
+}
