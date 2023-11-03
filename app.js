@@ -1,86 +1,63 @@
-// Shop location objects
 const locations = [
   {
-    location: 'Seattle',
+    name: 'Seattle',
     minCustomers: 23,
     maxCustomers: 65,
     avgCookiesPerSale: 6.3,
-    cookiesSoldPerHour: [],
-    generateHourlySales: function() {
-      for (let hour = 6; hour <= 19; hour++) {
-        const randomCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers);
-        const cookiesSold = Math.round(randomCustomers * this.avgCookiesPerSale);
-        this.cookiesSoldPerHour.push(cookiesSold);
-      }
-    },
-    calculateDailyTotal: function() {
-      return this.cookiesSoldPerHour.reduce((total, cookies) => total + cookies, 0);
-    },
   },
-  // Repeat the above structure for other locations (Tokyo, Dubai, Paris, Lima)
   {
-    location: 'Tokyo',
+    name: 'Tokyo',
     minCustomers: 3,
     maxCustomers: 24,
     avgCookiesPerSale: 1.2,
-    cookiesSoldPerHour: [],
-    // Methods for generating sales and calculating the total
   },
   {
-    location: 'Dubai',
+    name: 'Dubai',
     minCustomers: 11,
     maxCustomers: 38,
     avgCookiesPerSale: 3.7,
-    cookiesSoldPerHour: [],
-    // Methods for generating sales and calculating the total
   },
   {
-    location: 'Paris',
+    name: 'Paris',
     minCustomers: 20,
     maxCustomers: 38,
     avgCookiesPerSale: 2.3,
-    cookiesSoldPerHour: [],
-    // Methods for generating sales and calculating the total
   },
   {
-    location: 'Lima',
+    name: 'Lima',
     minCustomers: 2,
     maxCustomers: 16,
     avgCookiesPerSale: 4.6,
-    cookiesSoldPerHour: [],
-    // Methods for generating sales and calculating the total
   },
 ];
 
-// Function to generate hourly sales data for all locations
-function generateHourlySalesData() {
-  for (const location of locations) {
-    location.generateHourlySales();
+function generateHourlySales(location) {
+  location.hourlySales = [];
+  for (let hour = 6; hour <= 19; hour++) {
+    const randomCustomers = Math.floor(Math.random() * (location.maxCustomers - location.minCustomers + 1)) + location.minCustomers;
+    const cookiesSold = Math.round(randomCustomers * location.avgCookiesPerSale);
+    location.hourlySales.push(
+      `${hour % 12 || 12} ${hour < 12 ? 'am' : 'pm'}: ${cookiesSold} cookies`
+    );
   }
+  location.totalSales = location.hourlySales.reduce(
+    (sum, sale) => sum + parseInt(sale.split(' ')[1]),
+    0
+  );
 }
 
-// Function to display sales data for all locations
-function displaySalesData() {
-  for (const location of locations) {
-    const locationList = document.createElement('ul');
-    const locationDiv = document.createElement('div');
-    locationDiv.classList.add('location-sales');
-    locationDiv.innerHTML = `<h2>${location.location}</h2>`;
-    
-    for (let hour = 6; hour <= 19; hour++) {
-      const listItem = document.createElement('li');
-      listItem.textContent = `${hour}am: ${location.cookiesSoldPerHour[hour - 6]} cookies`;
-      locationList.appendChild(listItem);
-    }
-
-    const totalListItem = document.createElement('li');
-    totalListItem.textContent = `Total: ${location.calculateDailyTotal()} cookies`;
-    locationList.appendChild(totalListItem);
-    locationDiv.appendChild(locationList);
-    document.body.appendChild(locationDiv);
+function renderSalesData(location) {
+  const locationElement = document.createElement('div');
+  locationElement.className = 'location-sales';
+  locationElement.innerHTML = `<h2>${location.name}</h2><ul>`;
+  for (const sale of location.hourlySales) {
+    locationElement.innerHTML += `<li>${sale}</li>`;
   }
+  locationElement.innerHTML += `<li>Total: ${location.totalSales} cookies</li></ul>`;
+  document.getElementById('stores').appendChild(locationElement);
 }
 
-// Call the functions to generate and display sales data
-generateHourlySalesData();
-displaySalesData();
+for (const location of locations) {
+  generateHourlySales(location);
+  renderSalesData(location);
+}

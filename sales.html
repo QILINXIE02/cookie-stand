@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sales Data</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salmon Cookies Sales</title>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+</head>
+<body>
+  <header>
+    <h1>Sales Data</h1>
+  </header>
+
+  <main>
+    <section class="link-container">
+      <a href="index.html" alt="Homepage Link">Home</a>
+      <a href="sales.html" alt="Sales Data">Sales Data</a>
+    </section>
+
+    <div style="text-align: center;">
+      <img src="https://assets.dragoart.com/images/4190_501/how-to-draw-a-salmon_5e4c80e9c9f8a8.85035757_18917_3_4.jpg" alt="Salmon" width="200" height="150">
+    </div>
+  </main>
+
   <style>
-    /* CSS for styling your sales data */
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f3f3f3;
@@ -13,83 +34,73 @@
       padding: 0;
     }
     h1 {
-      font-family: 'YourCustomGoogleFont', sans-serif;
       color: #ff5733;
       text-align: center;
       padding: 20px 0;
+      font-size: 24px; /* Increase font size as needed */
     }
-    .location-sales {
-      background-color: #e0e0e0;
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
+    .link-container {
+      text-align: center;
     }
-    .location-sales h2 {
-      color: #333;
-    }
-    .location-sales ul {
-      list-style: none;
-      padding: 0;
-    }
-    .location-sales li {
-      margin: 10px 0;
-    }
-    /* Add more CSS for styling elements as needed */
   </style>
-</head>
-<body>
-  <h1>Sales Data</h1>
-  
-  <div class="location-sales">
-    <h2>Seattle</h2>
-    <ul>
-      <li>6am: 16 cookies</li>
-      <li>7am: 20 cookies</li>
-      <li>8am: 35 cookies</li>
-      <li>9am: 48 cookies</li>
-      <li>10am: 56 cookies</li>
-      <li>11am: 77 cookies</li>
-      <li>12pm: 93 cookies</li>
-      <li>1pm: 144 cookies</li>
-      <li>2pm: 119 cookies</li>
-      <li>3pm: 84 cookies</li>
-      <li>4pm: 61 cookies</li>
-      <li>5pm: 23 cookies</li>
-      <li>6pm: 42 cookies</li>
-      <li>7pm: 57 cookies</li>
-      <li>Total: 875 cookies</li>
-    </ul>
-  </div>
 
-  <div class="location-sales">
-    <h2>Tokyo</h2>
-    <ul>
-      <!-- Include sales data for Tokyo here -->
-    </ul>
-  </div>
+  <main>
+    <body>
+      <form id="form">
+        <fieldset>
+          <legend><i>New Stand</i></legend>
+          <label for="storeName">Store Name</label>
+          <input type="text" id="storeName" name="storeName">
+          <label for="minCustomers">Minimum Customers</label>
+          <input type="number" id="minCustomers" name="minCustomers">
+          <label for="maxCustomers">Max Customers</label>
+          <input type="number" id="maxCustomers" name="maxCustomers">
+          <label for="averageSale">Average Sale</label>
+          <input type="text" id="averageSale" name="averageSale">
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
 
-  <div class="location-sales">
-    <h2>Dubai</h2>
-    <ul>
-      <!-- Include sales data for Dubai here -->
-    </ul>
-  </div>
+      <table id="stores">
+        <tr>
+          <th>Location</th>
+          <th>Min Customers</th>
+          <th>Max Customers</th>
+          <th>Avg Cookie / Sale</th>
+          <th>6:00 AM</th>
+          <th>7:00 AM</th>
+          <th>8:00 AM</th>
+          <th>9:00 AM</th>
+          <th>10:00 AM</th>
+          <th>11:00 AM</th>
+          <th>12:00 PM</th>
+          <th>1:00 PM</th>
+          <th>2:00 PM</th>
+          <th>3:00 PM</th>
+          <th>4:00 PM</th>
+          <th>5:00 PM</th>
+          <th>6:00 PM</th>
+          <th>7:00 PM</th>
+          <th>Total</th>
+        </tr>
+      </table>
+  <footer>
+    <section class="locations">
+      <p><strong>Locations</strong></p>
+      <ul>
+        <li>4788 Hodges Blvd, Seattle, Washington</li>
+        <li>10700 Academy Rd, Tokyo, Japan</li>
+        <li>2700 U.S. 29, Dubai, United Arab Emirates</li>
+        <li>4330 Fulton Ave, Paris, Italy</li>
+        <li>428 22nd St E, Lima, Peru</li>
+      </ul>
+      <p><strong>Store hours: Monday-Friday: 6am-8pms</strong></p>
+    </section>
+    <section class="copyright">
+      <p style="font-weight: bold; font-size: 18px;">© 2023 Pat's Salmon Cookies</p>
+    </section>
+  </footer>
 
-  <div class="location-sales">
-    <h2>Paris</h2>
-    <ul>
-      <!-- Include sales data for Paris here -->
-    </ul>
-  </div>
-
-  <div class="location-sales">
-    <h2>Lima</h2>
-    <ul>
-      <!-- Include sales data for Lima here -->
-    </ul>
-  </div>
-  
-  <!-- Repeat the location-sales structure for more locations -->
-
+  <script src="app.js"></script>
 </body>
 </html>
