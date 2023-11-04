@@ -18,8 +18,8 @@
     h1 {
       color: #ff5733;
       text-align: center;
-      padding: 20px 0;
-      font-size: 24px;
+      padding: 50px 0;
+      font-size: 25px;
     }
     .link-container {
       text-align: center;
@@ -28,7 +28,7 @@
 </head>
 <body>
   <header>
-    <h1 style="font-size: 45px;">Sales Data</h1>
+    <h1 style="font-size: 50px;">Sales Data</h1>
   </header>
 
   <main>
@@ -40,9 +40,8 @@
     <div style="text-align: center;">
       <img src="https://assets.dragoart.com/images/4190_501/how-to-draw-a-salmon_5e4c80e9c9f8a8.85035757_18917_3_4.jpg" alt="Salmon" width="200" height="150">
     </div>
-    
+
     <article id="city-container">
-      <!-- Your content here -->
       <div class="store-images">
         <div class="image-container">
           <img src="https://th.bing.com/th/id/R.4c07f7f8ab8c1c1d0d29e7b9d112a9e1?rik=ZRhQ05rN0kWIRg&riu=http%3a%2f%2fmallwalkers.net%2fwp-content%2fuploads%2f2017%2f12%2forigcookieco3-768x489.jpg&ehk=ugrMw0Y10NfWx2e0EHCrA3h0saeQyfqRdYLUX1RRhxs%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Seattle" width="200" height="150">
@@ -53,52 +52,49 @@
           <p>Tokyo</p>
         </div>
       </div>
+      <table id="stores">
+        <tr>
+          <th>Location</th>
+          <th>Min Customers</th>
+          <th>Max Customers</th>
+          <th>Avg Cookie / Sale</th>
+          <th>6:00 AM</th>
+          <th>7:00 AM</th>
+          <th>8:00 AM</th>
+          <th>9:00 AM</th>
+          <th>10:00 AM</th>
+          <th>11:00 AM</th>
+          <th>12:00 PM</th>
+          <th>1:00 PM</th>
+          <th>2:00 PM</th>
+          <th>3:00 PM</th>
+          <th>4:00 PM</th>
+          <th>5:00 PM</th>
+          <th>6:00 PM</th>
+          <th>7:00 PM</th>
+          <th>Total</th>
+        </tr>
+      </table>
     </article>
     
-    <button id="toggle-mode">Toggle Mode</button>
-  </main>
-
-  <form id="newStoreForm">
-    <fieldset>
-            <legend>Add a new store to the table!</legend>
-            <label for="locationName">Location Name</label>
-            <input type="text" name ="locationName"/>
+    <button id="toggle-mode">Light/ Dark Mode</button>
+    <form id="newStoreForm">
+      <fieldset>
+        <legend>Add a new store to the table!</legend>
+        <label for="locationName">Location Name</label>
+        <input type="text" name="locationName" required />
     
-            <label for="newMinCust">Minimum Customers/ Hour</label>
-            <input type="number" name="newMinCust"/>
+        <label for="newMinCust">Minimum Customers Per Hour</label>
+        <input type="number" name="newMinCust" required />
     
-            <label for="newMaxCust">Maximum Customers/ Hour</label>
-            <input type="number" name="newMaxCust"/>
+        <label for="newMaxCust">Maximum Customers Per Hour</label>
+        <input type="number" name="newMaxCust" required />
     
-            <label for="newAvgCookie">Average Cookies/ Sale</label>
-            <input type="text" name="newAvgCookie"/>
-    <button type="submit">Submit</button>
-    
-    </fieldset>
-  <table id="stores">
-    <tr>
-      <th>Location</th>
-      <th>Min Customers</th>
-      <th>Max Customers</th>
-      <th>Avg Cookie / Sale</th>
-      <th>6:00 AM</th>
-      <th>7:00 AM</th>
-      <th>8:00 AM</th>
-      <th>9:00 AM</th>
-      <th>10:00 AM</th>
-      <th>11:00 AM</th>
-      <th>12:00 PM</th>
-      <th>1:00 PM</th>
-      <th>2:00 PM</th>
-      <th>3:00 PM</th>
-      <th>4:00 PM</th>
-      <th>5:00 PM</th>
-      <th>6:00 PM</th>
-      <th>7:00 PM</th>
-      <th>Total</th>
-    </tr>
-  </table>
-    <script src="app.js"></script>
+        <label for="newAvgCookie">Average Cookies Per Sale</label>
+        <input type="number" name="newAvgCookie" step="0.1" required />
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
   </main>
 
   <footer>
@@ -114,9 +110,11 @@
       <p><strong>Store hours: Monday-Friday: 6am-8pm</strong></p>
     </section>
     <section class="copyright">
-      <p style="font-weight: bold; font-size: 18px;">© 2023 Pat's Salmon Cookies(table submission display below, sorry, will try to fix later)</p>
+      <p style="font-weight: bold; font-size: 18px;">© 2023 Pat's Salmon Cookies
+        (table submission display below, sorry, will try to fix later)</p>
     </section>
   </footer>
 
+  <script src="app.js"></script>
 </body>
 </html>

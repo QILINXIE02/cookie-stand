@@ -89,6 +89,6 @@ locationForm.addEventListener('submit', function (event) {
     generateHourlySalesData();
     displaySalesData();
   } else {
-    alert('Please enter valid input values.');
+    alert('Please enter valid # or name input values.');
   }
 });
