@@ -42,6 +42,7 @@
     </div>
 
     <article id="city-container">
+      <p><Strong>Images of our favorite stores and info</Strong></p>
       <div class="store-images">
         <div class="image-container">
           <img src="https://th.bing.com/th/id/R.4c07f7f8ab8c1c1d0d29e7b9d112a9e1?rik=ZRhQ05rN0kWIRg&riu=http%3a%2f%2fmallwalkers.net%2fwp-content%2fuploads%2f2017%2f12%2forigcookieco3-768x489.jpg&ehk=ugrMw0Y10NfWx2e0EHCrA3h0saeQyfqRdYLUX1RRhxs%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Seattle" width="200" height="150">
@@ -54,7 +55,7 @@
       </div>
       <table id="stores">
         <tr>
-          <th>Location</th>
+          <th>Location <strong>(Leaving for references)</strong> </th>
           <th>Min Customers</th>
           <th>Max Customers</th>
           <th>Avg Cookie / Sale</th>
@@ -77,10 +78,13 @@
       </table>
     </article>
     
-    <button id="toggle-mode">Light/ Dark Mode</button>
+    <div class="button-container">
+      <button id="toggle-mode" class="highlight">Toggle Mode</button>
+    </div>
+  
     <form id="newStoreForm">
       <fieldset>
-        <legend>Add a new store to the table!</legend>
+        <legend>Do you want to add store datas?</legend>
         <label for="locationName">Location Name</label>
         <input type="text" name="locationName" required />
     
@@ -111,7 +115,8 @@
     </section>
     <section class="copyright">
       <p style="font-weight: bold; font-size: 18px;">© 2023 Pat's Salmon Cookies
-        (table submission display below, sorry, will try to fix later)</p>
+        <h2>(Scroll down: table submission display below, sorry, will try to fix later)</h2>
+      </p>
     </section>
   </footer>
 
